@@ -15,7 +15,7 @@ class avatarClock extends Component {
  
   render() {
     return (
-      <div>
+      <div className = "">
         <p>Current time:</p>
         <Clock
           value={this.state.date}
