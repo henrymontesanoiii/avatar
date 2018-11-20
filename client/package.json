@@ -2,13 +2,18 @@
   "name": "avatar",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy":"http://localhost:3001/",
   "dependencies": {
+    "axios": "^0.16.2",
+    "fabric": "^2.4.3",
+    "libmoji": "^2.3.0",
+    "mdbreact": "^4.8.3",
     "react": "^16.0.0",
+    "react-bootstrap": "^0.32.4",
+    "react-bootstrap-dropdown-menu": "^1.1.15",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14",
     "react-router-dom": "^4.1.2",
-    "axios": "^0.16.2"
+    "react-scripts": "1.0.14"
   },
   "scripts": {
     "start": "react-scripts start",
