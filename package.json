@@ -1,8 +1,24 @@
 {
   "name": "avatar",
+<<<<<<< HEAD
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+=======
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "libmoji": "^2.3.0",
+    "mathjs": "^5.2.3",
+    "react": "^16.6.3",
+    "react-addons-update": "^15.6.2",
+    "react-clock": "^2.3.0",
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1"
+  },
+>>>>>>> e623d619f6521e695910e512a8902b453cbee2a4
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",

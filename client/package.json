@@ -4,15 +4,24 @@
   "private": true,
   "proxy":"http://localhost:3001/",
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^0.16.2",
     "fabric": "^2.4.3",
     "libmoji": "^2.3.0",
     "mdbreact": "^4.8.3",
+=======
+    "axios": "^0.18.0",
+>>>>>>> e623d619f6521e695910e512a8902b453cbee2a4
     "react": "^16.0.0",
     "react-bootstrap": "^0.32.4",
     "react-bootstrap-dropdown-menu": "^1.1.15",
     "react-dom": "^16.0.0",
+<<<<<<< HEAD
     "react-router-dom": "^4.1.2",
+=======
+    "react-router-dom": "^4.3.1",
+
+>>>>>>> e623d619f6521e695910e512a8902b453cbee2a4
     "react-scripts": "1.0.14"
   },
   "scripts": {
