@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import Jeopardy from "./components/Jeopardy";
 import Weather from "./components/Weather";
 import wallpaper from "../src/wallpaper.json";
+import AvatarCreate from "./pages/AvatarWithTabs/AvatarWithTabs";
 
 
 
@@ -48,6 +49,7 @@ class App extends Component {
               <Route exact path="/calculator" component={avatarCalculator} />
               <Route exact path="/weather" component={Weather} />
               <Route exact path="/jeopardy" component={Jeopardy} />
+              <Route exact path="/avatar" component={AvatarCreate} />
             </Switch>
           </div>
         </div>

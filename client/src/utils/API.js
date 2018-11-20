@@ -11,14 +11,6 @@ const jeopardyEndPoint = "&type=multiple";
 // https://opentdb.com/api.php?amount=1&category=20&difficulty=medium&type=multiple
 
 export default {
-<<<<<<< HEAD
-
-  getAssets : function () {
-    return axios.get("/api/asset");
-  }
-  
-};
-=======
   getWeather: function (city, country) {
     console.log(city, country)
     let place = city.trim();
@@ -38,4 +30,3 @@ export default {
   }
   }
 
->>>>>>> e623d619f6521e695910e512a8902b453cbee2a4
