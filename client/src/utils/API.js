@@ -29,5 +29,4 @@ export default {
     return axios.get(JeopardyBase + categoryId + "&&difficulty=" + difficulty + jeopardyEndPoint)
   }
   }
- 
 
