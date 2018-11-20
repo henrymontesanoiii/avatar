@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const BASEURL = "https://api.openweathermap.org/data/2.5/weather?q=";
 const APIENDPOINT = "&units=imperial&appid=";
 const APIKEY = "342d2d7e5af08b2e8114b52d9ac29603";
@@ -28,3 +29,4 @@ export default {
     return axios.get(JeopardyBase + categoryId + "&&difficulty=" + difficulty + jeopardyEndPoint)
   }
   }
+
