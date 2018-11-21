@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/WalmartAPI";
+import WalmartAPI from "../../utils/WalmartAPI";
 
 
 class Shopping extends Component {
@@ -7,6 +7,10 @@ class Shopping extends Component {
     search: "",
     results: []
   };
+
+  componentDidMount() {
+    this.getTrending();
+  }
 
   handleInputChange = (event) => {
     const {name, value} = event.target;
@@ -20,7 +24,7 @@ class Shopping extends Component {
   getSearchResults = (event) => {
     event.preventDefault();
 
-    API.searchWalmart(this.state.search)
+    WalmartAPI.searchWalmart(this.state.search)
       .then(res => {
         console.log(res.items);
         this.setState({
@@ -31,6 +35,19 @@ class Shopping extends Component {
       .catch(err => {
         console.log(err)
       })
+  };
+
+  getTrending = () => {
+    WalmartAPI.trendingWalmart()
+      .then((res) => {
+        console.log(res.items);
+        this.setState({
+          results: res.items
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
 
