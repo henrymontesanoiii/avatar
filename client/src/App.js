@@ -7,13 +7,10 @@ import Nav from "./components/Nav";
 import Jeopardy from "./components/Jeopardy";
 import Weather from "./components/Weather";
 import wallpaper from "../src/wallpaper.json";
-<<<<<<< HEAD
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import Main from "./containers/Main";
-=======
 import AvatarCreate from "./pages/AvatarWithTabs/AvatarWithTabs";
->>>>>>> aa0a4d047c2366620f21c382fce2cb82710ce4e9
 
 
 

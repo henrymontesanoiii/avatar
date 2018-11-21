@@ -54,9 +54,6 @@ export default {
   register: function (userInfo) {
     return axios.post("/api/users/register", userInfo)
   }
-<<<<<<< HEAD
 }
-=======
-  }
->>>>>>> aa0a4d047c2366620f21c382fce2cb82710ce4e9
+  
 
