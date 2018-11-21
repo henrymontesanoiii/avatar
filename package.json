@@ -25,6 +25,7 @@
     "mathjs": "^5.2.3",
     "mongoose": "^5.3.12",
     "react-addons-update": "^15.6.2",
-    "react-clock": "^2.3.0"
+    "react-clock": "^2.3.0",
+    "react-router-dom": "^4.3.1"
   }
 }

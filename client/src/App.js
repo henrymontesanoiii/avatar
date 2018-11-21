@@ -8,6 +8,7 @@ import Jeopardy from "./components/Jeopardy";
 import Weather from "./components/Weather";
 import wallpaper from "../src/wallpaper.json";
 import Jokes from "./components/Jokes";
+import Shopping from "./components/Shopping";
 
 
 
@@ -50,6 +51,7 @@ class App extends Component {
               <Route exact path="/weather" component={Weather} />
               <Route exact path="/jeopardy" component={Jeopardy} />
               <Route exact path="/joke" component={Jokes} />
+              <Route exact path="/shopping" component={Shopping} />
             </Switch>
           </div>
         </div>
