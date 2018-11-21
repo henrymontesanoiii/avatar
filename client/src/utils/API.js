@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const BASEURL = "https://api.openweathermap.org/data/2.5/weather?q=";
 const APIENDPOINT = "&units=imperial&appid=";
 const APIKEY = "342d2d7e5af08b2e8114b52d9ac29603";
@@ -53,5 +54,9 @@ export default {
   register: function (userInfo) {
     return axios.post("/api/users/register", userInfo)
   }
+<<<<<<< HEAD
 }
+=======
+  }
+>>>>>>> aa0a4d047c2366620f21c382fce2cb82710ce4e9
 

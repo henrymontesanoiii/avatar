@@ -12,6 +12,7 @@ const routes = require('./routes');
 // Set up Express
 const app = express();
 const PORT = process.env.PORT || 3001;
+<<<<<<< HEAD
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -35,6 +36,24 @@ passport.deserializeUser(User.deserializeUser());
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/WidgetWorld');
+=======
+ 
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+// Connect to the Mongo DB
+//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/libMoji");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitToScrape");
+
+// Add routes, both API and view
+app.use(routes);
+
+>>>>>>> aa0a4d047c2366620f21c382fce2cb82710ce4e9
 
 // Start the API server
 app.listen(PORT, function() {
