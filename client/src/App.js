@@ -6,6 +6,9 @@ import Nav from "./components/Nav";
 import Jeopardy from "./components/Jeopardy";
 import Weather from "./components/Weather";
 import wallpaper from "../src/wallpaper.json";
+import Login from "./containers/Login";
+import Signup from "./containers/Signup";
+import Main from "./containers/Main";
 import AvatarCreate from "./pages/AvatarWithTabs/AvatarWithTabs";
 import Home from "./components/Home";
 import Speech from "./pages/WebSpeech/WebSpeech";
@@ -16,7 +19,10 @@ class App extends Component {
   state = {
     wallpaperImage: wallpaper[0].image,
     wallpapers: wallpaper
+    
   }
+
+
 
   handleClicked = (id) => {
     console.log(this.state.wallpaperImage);
@@ -46,6 +52,7 @@ class App extends Component {
               <Route exact path="/calculator" component={avatarCalculator} />
               <Route exact path="/weather" component={Weather} />
               <Route exact path="/jeopardy" component={Jeopardy} />
+              <Route component={Main} />
               <Route exact path="/avatar" component={AvatarCreate} />
             </Switch>
           </div>
