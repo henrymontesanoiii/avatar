@@ -21,6 +21,11 @@ const Navbar = (props) => (
             className={window.location.pathname === "/Jeopardy" ? "nav-link active" : "nav-link"}
             to="/jeopardy">Jeopardy</Link>
         </li>
+        <li className="nav-item">
+          <Link
+            className={window.location.pathname === "/Calendar" ? "nav-link active" : "nav-link"}
+            to="/calendar">Calendar</Link>
+        </li>
       </ul>
     </div>
   </nav>

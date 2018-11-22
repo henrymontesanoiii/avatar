@@ -5,6 +5,7 @@ import NavTabs from "./components/Navbar";
 // import About from "./components/About";
 import Weather from "./components/Weather";
 import Jeopardy from "./components/Jeopardy";
+import Calendar from "./components/Calendar";
 
 
 const App = () => (
@@ -16,6 +17,7 @@ const App = () => (
         <Route exact path="/Weather" component={Weather} />
         <Route path="/Jeopardy" component={Jeopardy} />
         <Route exact path="/" component={Weather} />
+        <Route exact path="/Calendar" component={Calendar} />
         {/* <Route component={NoMatch} /> */}
       </Switch>
     </div>

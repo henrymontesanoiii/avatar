@@ -40,7 +40,6 @@ class Weather extends Component {
   }
 
   
-
   handleInputChange = (event) => {
     const { name, value } = event.target;
 
@@ -60,9 +59,9 @@ class Weather extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
       <div className="row justify-content-center">
-        <div className="col-12 col-sm-8 col-md-6 ml-auto">
+        <div className="col-12 col-sm-8 col-md-6 ml-auto mt-5">
           <h1>Weather:</h1><br></br>
           <h4> City: {this.state.city}</h4>
           <h4>Country: {this.state.country}</h4>
@@ -98,7 +97,7 @@ class Weather extends Component {
 
         </div>
        
-        <div className="col-12 col-sm-8 col-md-6 ml-auto">
+        <div className="col-12 col-sm-8 col-md-6 ml-auto mt-5">
           <img className="img-fluid" src={"http://openweathermap.org/img/w/" + (this.state.icon) + ".png"} alt="icon" />
           {/* <h3>Icon: {this.state.icon}</h3> */}
           <h4>temp min: {this.state.temp_min} </h4>
