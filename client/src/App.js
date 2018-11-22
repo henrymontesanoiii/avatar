@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 import avatarClock from "./components/Clock/";
 import avatarCalculator from "./components/Calculator";
 import Nav from "./components/Nav";
@@ -8,8 +7,9 @@ import Jeopardy from "./components/Jeopardy";
 import Weather from "./components/Weather";
 import wallpaper from "../src/wallpaper.json";
 import AvatarCreate from "./pages/AvatarWithTabs/AvatarWithTabs";
-
-
+import Home from "./components/Home";
+import Speech from "./pages/WebSpeech/WebSpeech";
+import Voice from "./components/Voice";
 
 
 class App extends Component {
@@ -17,8 +17,6 @@ class App extends Component {
     wallpaperImage: wallpaper[0].image,
     wallpapers: wallpaper
   }
-
-  
 
   handleClicked = (id) => {
     console.log(this.state.wallpaperImage);
@@ -29,22 +27,21 @@ class App extends Component {
     });
     console.log(chosenWallpaper);
     this.setState({ wallpaperImage: chosenWallpaper.image })
-   
   }
 
   render() {
 
     document.body.style.backgroundImage = `url(${this.state.wallpaperImage})`;
     document.body.style.backgroundSize = "cover";
-    
-    console.log(this.state);
     return (
-      
       <Router >
         <div  >
-          <Nav handleClicked={this.handleClicked}/>
+          <Nav handleClicked={this.handleClicked} />
+          <Speech></Speech>
+          <Voice></Voice>
           <div>
             <Switch>
+              <Route exact path="/" component={Home}/>
               <Route exact path="/clock" component={avatarClock} />
               <Route exact path="/calculator" component={avatarCalculator} />
               <Route exact path="/weather" component={Weather} />

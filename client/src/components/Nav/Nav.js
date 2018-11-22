@@ -5,9 +5,9 @@ import wallpaper from "../../wallpaper.json";
 const Nav = (props) => (
 
 
-  <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
     <a className="navbar-brand" href="/">
-      Nav
+      
     </a>
     <div className="dropdown">
       <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
