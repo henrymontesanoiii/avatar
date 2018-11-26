@@ -56,9 +56,18 @@ const Home = () => (
           </div></div>
       </div>
       <div class="col-4"> <div class='card card-home'>
-        <div class='card-title text-center'><h3>Calculator</h3>
+        <div class='card-title text-center'><h3>Shopping</h3>
           <div class='card-body'>
-            <a href='#' class='deg180'><img class='img-circle m-3' src='https://cdn-images-1.medium.com/max/1600/1*lpEtdIMNuwHzgAWxypcGqw.gif'></img></a>
+            <a href='/shopping' class='deg180'><img class='img-circle m-3' src='https://media1.tenor.com/images/197e8fae2c1dc45c3611080e71cc3408/tenor.gif'></img></a>
+          </div>
+        </div>
+      </div>
+
+      </div>
+      <div class="col-4"> <div class='card card-home'>
+        <div class='card-title text-center'><h3>Jokes</h3>
+          <div class='card-body'>
+            <a href='/jokes' class='deg180'><img class='img-circle m-3' src='https://i.giphy.com/media/3o7btXv9i4Pnjb1m0w/giphy.webp'></img></a>
           </div>
         </div>
       </div>

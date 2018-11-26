@@ -37,7 +37,7 @@ class Jeopardy extends Component {
     setTimeout(function () {
       this.generateRandomCategories();
       this.displayCategoryButtons();
-    }.bind(this), 3000)
+    }.bind(this), 1000)
   }
 
   showModal = () => {

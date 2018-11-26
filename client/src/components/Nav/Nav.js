@@ -72,7 +72,7 @@ class Nav extends Component {
     return (
 
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <Link className="navbar-brand" to="/">Widget World</Link>
+        <Link className="navbar-brand" to="/"><img src="../images/babymakr.jpg"></img></Link>
 
         <div className="collapse navbar-collapse ">
           <div className="navbar-nav ">

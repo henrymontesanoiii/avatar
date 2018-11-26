@@ -8,6 +8,8 @@ import Libmoji from "libmoji";
 import assets from '../../JSON/assets.json'
 import Canvas from '../../components/Canvas'
 import VoiceList from '../../components/VoiceList'
+import API from "../../utils/API";
+import {Redirect} from "react-router-dom";
 
 class AvatarWithTabs extends Component {
 
@@ -15,6 +17,8 @@ class AvatarWithTabs extends Component {
     super(props);
 
     this.state = {
+      isLoggedIn: true,
+    username: "",
       selectedGender: "male",
       selectedStyle: "bitstrips",
       selectedOutfit: "",
@@ -40,6 +44,24 @@ class AvatarWithTabs extends Component {
         { url: "/images/styleclassic.png", id: "bitmoji" },
         { url: "images/styledeluxe.png", id: "cm" }]
     };
+  }
+
+  // Check login status on load
+  componentDidMount() {
+    this.loginCheck();
+  }
+
+  // Check login status
+  loginCheck = () => {
+    API
+      .loginCheck()
+      .then(res => this.setState({
+        isLoggedIn: res.data.isLoggedIn, username: res.data.username
+      }))
+      .catch(err => {
+        console.log(err);
+        this.setState({isLoggedIn: false})
+      })
   }
 
   funcSetGender = (id) => {
@@ -200,6 +222,10 @@ class AvatarWithTabs extends Component {
 
 
   render() {
+    if (!this.state.isLoggedIn) {
+      return <Redirect to="/login"/>
+    }
+    else {
     return (
       <div className="App">
         <Jumbotron>
@@ -279,7 +305,7 @@ class AvatarWithTabs extends Component {
         </div>
       </div>
 
-    );
+    )};
   }
 }
 
