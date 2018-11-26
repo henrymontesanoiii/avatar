@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Redirect} from "react-router-dom";
 import API from "../utils/API";
 
+
 class Login extends Component {
   state = {
     isLoggedIn: false,
@@ -9,6 +10,7 @@ class Login extends Component {
     password: ""
   }
 
+  
   handleInputChange = e => {
     const { name, value } = e.target;
 
@@ -25,7 +27,7 @@ class Login extends Component {
       .then(res => {
         console.log(res.data);
         this.setState({isLoggedIn: res.data})
-
+       window.location.reload();
       })
       .catch(err => alert("Incorrect Username or Password!"));
   }
