@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Cloud",
+    "image": "https://delta.jeffresc.com/depictions/com.jeffresc.stormlivewallpaper14/screenshots/14.gif"
+  },
+  {
+    "id": 2,
+    "name": "Winter",
+    "image": "https://i.pinimg.com/originals/d5/d7/98/d5d798ff8d8c5d624da53a704803ef10.gif"
+  },
+  {
+    "id": 3,
+    "name": "Summer",
+    "image": "https://kyleknowsblog.files.wordpress.com/2017/01/vvvv.gif"
+  },
+  {
+    "id": 4,
+    "name": "Autumn",
+    "image": "https://i.imgur.com/eladvsG.gif?noredirect"
+  },
+  {
+    "id": 5,
+    "name": "Spring",
+    "image": "https://steamusercontent-a.akamaihd.net/ugc/786288600164226109/05E2D62D399BA18AEF49D74CF085925DD79DC886/"
+  }
+]
