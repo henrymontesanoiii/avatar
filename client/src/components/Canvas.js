@@ -6,11 +6,11 @@ class Canvas extends React.Component{
 	render(){		
 		return (
       <div>
-      <Card>
+      <Card width={"200px"} >
         <CardTitle className="text-center" ><h4>Your Avatar</h4></CardTitle>
-        <CardImg top width="100%" src={this.props.url} alt="" />
+        <CardImg top  src={this.props.url} className="canvas-img" width={"200px"} height = {"300px"}  />
         <CardBody>    
-          <Button bsStyle="success" onClick = {this.saveToCanvas} bsSize="large" >Save Avatar</Button>
+          <Button bsStyle="success" onClick = {this.saveToCanvas}  >Save Avatar</Button>
         </CardBody>
       </Card>
     </div>

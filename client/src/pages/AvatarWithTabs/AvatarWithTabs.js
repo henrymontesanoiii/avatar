@@ -139,11 +139,11 @@ class AvatarWithTabs extends Component {
   pulloutfitStyles = (gender) => {
     let arrFit = [];
     let arroutfit = assets["outfits"][gender]["brands"];
-    arroutfit.forEach(element => {
-      console.log(element.name);
+    arroutfit.forEach(element => {      
       arrFit.push({ id: element.id, name: element.name });
     });
     this.setState({ outfitTypes: Array.from(arrFit) });
+    this.setState({selectedOutfitStyle : arrFit[0]});
 
   }
 
@@ -155,6 +155,7 @@ class AvatarWithTabs extends Component {
       arrFit.push({ url: element.image, id: element.id });
     })
     this.setState({ outfits: Array.from(arrFit) });
+     
   }
 
   pullOutHairStyles = (gender, style, outfit) => {
@@ -207,7 +208,7 @@ class AvatarWithTabs extends Component {
         </Jumbotron>
 
         <div className="main">
-          <Col md={8}>
+          <Col md={9}>
             <Tabs activeKey={this.state.key} onSelect={this.handleSelect} id="controlled-tab-example" >
               <Tab eventKey={1} title="Gender" >
                 <TemplateList
@@ -269,7 +270,7 @@ class AvatarWithTabs extends Component {
               </Tab>
             </Tabs>
           </Col>
-          <Col md={4}>
+          <Col md={3}>
             <Canvas
               url = {this.state.selectedAvatar}
             />
