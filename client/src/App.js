@@ -10,10 +10,8 @@ import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import Main from "./containers/Main";
 import AvatarCreate from "./pages/AvatarWithTabs/AvatarWithTabs";
-import Home from "./pages/Home/Home";
-import PropTypes from "prop-types";
-import createHistory from 'history/createBrowserHistory';
-import Talk from './pages/Talk/Talk';
+import Jokes from "./components/Jokes";
+import Shopping from "./components/Shopping";
 
 const history = createHistory({
   forceRefresh: true
@@ -93,7 +91,9 @@ render() {
             <Route exact path="/weather" component={Weather} />
             <Route exact path="/jeopardy" component={Jeopardy} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/avatar" component={AvatarCreate} />            
+            <Route exact path="/avatar" component={AvatarCreate} />      
+            <Route exact path="/jokes" component={Jokes} />      
+            <Route exact path="/shopping" component={Shopping} />            
           </Switch>
         </div>
       </div>
