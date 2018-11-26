@@ -1,0 +1,21 @@
+.img-circle
+{
+  width: 250px;
+  height: 250px;
+}
+
+.card-home
+{
+  width: 300px;
+  height: 350px;
+  background-color: transparent;
+  color: white;
+  border-style: inset;
+  border-width: 3px;
+  border-color: black
+}
+
+body
+{
+  font-family: 'Quicksand', sans-serif;
+}
