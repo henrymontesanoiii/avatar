@@ -11,6 +11,8 @@ import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import Main from "./containers/Main";
 import AvatarCreate from "./pages/AvatarWithTabs/AvatarWithTabs";
+import Jokes from "./components/Jokes";
+import Shopping from "./components/Shopping";
 
 
 
@@ -58,6 +60,8 @@ class App extends Component {
               <Route exact path="/calculator" component={avatarCalculator} />
               <Route exact path="/weather" component={Weather} />
               <Route exact path="/jeopardy" component={Jeopardy} />
+              <Route exact path="/jokes" component={Jokes} />
+              <Route exact path="/shopping" component={Shopping} />
               <Route component={Main} />
               <Route exact path="/avatar" component={AvatarCreate} />
             </Switch>
