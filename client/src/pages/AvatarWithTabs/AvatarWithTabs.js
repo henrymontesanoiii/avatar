@@ -7,6 +7,7 @@ import '../../App.css';
 import Libmoji from "libmoji";
 import assets from '../../JSON/assets.json'
 import Canvas from '../../components/Canvas'
+import VoiceList from '../../components/VoiceList'
 
 class AvatarWithTabs extends Component {
 
@@ -23,7 +24,7 @@ class AvatarWithTabs extends Component {
       selectedSkinTone: "",
       selectedHairTone: "",
       selectedGlasses: "",
-      selectedAvatar:"",
+      selectedAvatar: "",
       activeProperty: null,
       outfits: [],
       hats: [],
@@ -48,32 +49,32 @@ class AvatarWithTabs extends Component {
     this.setState({ brands: [] });
     this.setState({ hair: [] });
   }
-  funcSetStyle = (id,url) => {
-   
+  funcSetStyle = (id, url) => {
+
     this.setState({ selectedStyle: id }, () => console.log(this.state.selectedStyle));
   }
 
-  funcSetOutfit = (id,url) => {
+  funcSetOutfit = (id, url) => {
     this.setState({ selectedOutfit: id }, () => console.log(this.state.selectedOutfit));
     this.setState({ selectedAvatar: url }, () => console.log(this.state.selectedAvatar));
   }
 
-  funcSetHair = (id,url) => {    
+  funcSetHair = (id, url) => {
     this.setState({ selectedHair: id }, () => console.log(this.state.selectedHair));
     this.setState({ selectedAvatar: url }, () => console.log(this.state.selectedAvatar));
   }
 
-  funcSetHairTone = (id,url) => {
+  funcSetHairTone = (id, url) => {
     this.setState({ selectedHairTone: id }, () => console.log(this.state.selectedHairTone));
     this.setState({ selectedAvatar: url }, () => console.log(this.state.selectedAvatar));
   }
 
-  funcSetGlasses = (id,url) => {
+  funcSetGlasses = (id, url) => {
     this.setState({ selectedGlasses: id }, () => console.log(this.state.selectedGlasses));
     this.setState({ selectedAvatar: url }, () => console.log(this.state.selectedAvatar));
   }
 
-  funcSetHats = (id,url) => {
+  funcSetHats = (id, url) => {
     this.setState({ selectedHat: id }, () => console.log(this.state.selectedHat));
     this.setState({ selectedAvatar: url }, () => console.log(this.state.selectedAvatar));
   }
@@ -139,11 +140,10 @@ class AvatarWithTabs extends Component {
   pulloutfitStyles = (gender) => {
     let arrFit = [];
     let arroutfit = assets["outfits"][gender]["brands"];
-    arroutfit.forEach(element => {      
+    arroutfit.forEach(element => {
       arrFit.push({ id: element.id, name: element.name });
     });
     this.setState({ outfitTypes: Array.from(arrFit) });
-    this.setState({selectedOutfitStyle : arrFit[0]});
 
   }
 
@@ -155,7 +155,6 @@ class AvatarWithTabs extends Component {
       arrFit.push({ url: element.image, id: element.id });
     })
     this.setState({ outfits: Array.from(arrFit) });
-     
   }
 
   pullOutHairStyles = (gender, style, outfit) => {
@@ -271,8 +270,9 @@ class AvatarWithTabs extends Component {
             </Tabs>
           </Col>
           <Col md={3}>
+            <VoiceList></VoiceList>
             <Canvas
-              url = {this.state.selectedAvatar}
+              url={this.state.selectedAvatar}
             />
 
           </Col>

@@ -8,6 +8,10 @@ const User = new Schema({
   userCreated: {
     type: Date,
     default: Date.now
+  },
+  avatar:{
+    type : Schema.Types.ObjectId,
+    ref: "Avatar"
   }
 });
 

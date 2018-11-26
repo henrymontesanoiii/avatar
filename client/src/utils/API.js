@@ -53,6 +53,11 @@ export default {
   */
   register: function (userInfo) {
     return axios.post("/api/users/register", userInfo)
+  },
+
+  //This route is to create an avatar
+  createAvatar: function (avatarInfo) {
+    return axios.post("api/avatar/create", avatarInfo)
   }
 }
   

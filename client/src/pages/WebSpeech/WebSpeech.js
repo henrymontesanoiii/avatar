@@ -36,11 +36,12 @@ class Dictaphone extends Component {
 
     return (
       <div>
-        {/* <button onClick={startListening}>Start Listenting</button>
+        <button onClick={startListening}>Start Listenting</button>
         <button onClick={stopListening}>Stop Listenting</button>
         <button onClick={resetTranscript}>Reset</button>
-        <span ><h1>{transcript}</h1></span>
-        <button onClick={this.gettingTheCommand} value={transcript}>Click here </button> */}
+   
+        <button onClick={this.gettingTheCommand} value={transcript}>Click here </button>
+             <span ><h1>{transcript}</h1></span>
       </div>
     )
   }

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import avatarClock from "./components/Clock/";
 import avatarCalculator from "./components/Calculator";
 import Nav from "./components/Nav";
-import Jeopardy from "./components/Jeopardy";
+import Jeopardy from "./components/Jeopardy/Jeopardy";
 import Weather from "./components/Weather";
 import wallpaper from "../src/wallpaper.json";
 import Login from "./containers/Login";
@@ -12,6 +12,9 @@ import Main from "./containers/Main";
 import AvatarCreate from "./pages/AvatarWithTabs/AvatarWithTabs";
 import Jokes from "./components/Jokes";
 import Shopping from "./components/Shopping";
+import Talk from "./pages/Talk/Talk";
+import Home from "./pages/Home/Home";
+import createHistory from "history/createBrowserHistory";
 
 const history = createHistory({
   forceRefresh: true
@@ -59,6 +62,16 @@ class App extends Component {
       history.push('/jeopardy');
       cmdToTalk = "Play your Trivia";
     }
+    else if(command.includes('jokes'))
+    {
+      history.push('/jokes');
+      cmdToTalk = "Here you go.... Laugh at your jokes";
+    }
+    else if(command.includes('shopping'))
+    {
+      history.push('/shopping');
+      cmdToTalk = "Lets do some shopping";
+    }
     this.setState({commandTalk:cmdToTalk});
 }
 
@@ -93,7 +106,9 @@ render() {
             <Route exact path="/home" component={Home} />
             <Route exact path="/avatar" component={AvatarCreate} />      
             <Route exact path="/jokes" component={Jokes} />      
-            <Route exact path="/shopping" component={Shopping} />            
+            <Route exact path="/shopping" component={Shopping} /> 
+            <Route exact path="/signup" component={Signup}/> 
+            <Route exact path="/login" component={Login}/>          
           </Switch>
         </div>
       </div>

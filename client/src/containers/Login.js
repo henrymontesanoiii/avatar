@@ -1,7 +1,13 @@
 import React, {Component} from "react";
 import {Redirect} from "react-router-dom";
 import API from "../utils/API";
+import createHistory from "history/createBrowserHistory";
 
+const history = createHistory({
+  forceRefresh: true
+})
+
+const location = history.location;
 class Login extends Component {
   state = {
     isLoggedIn: false,
@@ -25,6 +31,9 @@ class Login extends Component {
       .then(res => {
         console.log(res.data);
         this.setState({isLoggedIn: res.data})
+        console.log(location);
+        history.push(location);
+        //window.location.reload();
 
       })
       .catch(err => alert("Incorrect Username or Password!"));
