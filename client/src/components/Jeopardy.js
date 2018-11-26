@@ -10,7 +10,7 @@ class Jeopardy extends Component {
 
   state = {
     score: 0,
-    message: "Choose a category to start",
+    message: "Choose a category to start :",
     categoryId: 0,
     categoryNames: [],
     difficultyArray: ["medium", "easy", "hard"],
