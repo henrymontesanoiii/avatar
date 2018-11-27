@@ -133,8 +133,7 @@ class AvatarWithTabs extends Component {
   handleSelect = (key) => {
     let gender = this.state.selectedGender;
     let style = this.state.selectedStyle;
-    let outfit = this.state.selectedOutfit;
-    let outfitstyle = this.state.selectedOutfitStyle;
+    let outfit = this.state.selectedOutfit;    
     let hair = this.state.selectedHair;
     let hairtone = this.state.selectedHairTone;
     let glasses = this.state.selectedGlasses;
@@ -296,7 +295,7 @@ class AvatarWithTabs extends Component {
             </Tabs>
           </Col>
           <Col md={3}>
-            <VoiceList></VoiceList>
+            
             <Canvas
               url={this.state.selectedAvatar}
             />
@@ -304,7 +303,6 @@ class AvatarWithTabs extends Component {
           </Col>
         </div>
       </div>
-
     )};
   }
 }

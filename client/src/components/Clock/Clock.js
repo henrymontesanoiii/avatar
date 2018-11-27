@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Clock from 'react-clock';
+import "./Clock.css";
  
 class avatarClock extends Component {
   state = {
@@ -15,12 +16,17 @@ class avatarClock extends Component {
  
   render() {
     return (
-      <div className = "container ml-5">
-        <p>Current time:</p>
-        <Clock
-          value={this.state.date}
-          size = {250}
-        />
+      <div className = "row justify-content-center">
+        <div className="col-12 col-sm-5 text-center clock-div">
+
+            <h3>Current time:</h3>
+            <Clock
+              value={this.state.date}
+              size={350}
+              renderNumbers={true}
+            />
+
+        </div>
       </div>
     );
   }

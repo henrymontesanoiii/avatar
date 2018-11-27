@@ -37,7 +37,7 @@ class Jeopardy extends Component {
     setTimeout(function () {
       this.generateRandomCategories();
       this.displayCategoryButtons();
-    }.bind(this), 3000)
+    }.bind(this), 1000)
   }
 
   showModal = () => {
@@ -51,7 +51,7 @@ class Jeopardy extends Component {
 
   generateRandomCategories = () => {
       
-    for (let i = 0; this.state.categoryArray.length < 4; i++) {
+    for (let i = 0; this.state.categoryArray.length < 5; i++) {
       let randNum =
         Math.floor(Math.random() * (32 - 9 + 1) + 9);
       console.log(randNum)

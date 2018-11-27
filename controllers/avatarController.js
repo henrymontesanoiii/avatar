@@ -5,16 +5,16 @@ module.exports = {
     console.log("in avatarcontroller");
     console.log(req.body);
     db.Avatar          
-      .create({url : req.body.url})      
-      .then(
-        function(dbAvatar)
-        {
-          console.log (dbAvatar);
-          return db.User.findByIdAndUpdate(dbAvatar.userid, {avatar: dbAvatar._id});
-        }
-
-      )
-      .then(data => res.json(data))
+      .create(req.body)      
+      .then(dbAvatar => console.log(dbAvatar))     
       .catch(err => res.status(422).json(err));
-  }  
+  },
+  find: function(req,res){
+    console.log("in avatarcontroller");
+    console.log(req.params.id );
+    db.Avatar
+    .find({userid: req.params.id})
+    .then(dbAvatar =>res.json(dbAvatar))
+    .catch(err => res.status(422).json(err));
+  }
 };

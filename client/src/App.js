@@ -16,6 +16,8 @@ import Talk from "./pages/Talk/Talk";
 import Home from "./pages/Home/Home";
 import createHistory from "history/createBrowserHistory";
 import API from "./utils/API";
+require('dotenv').config();
+
 
 
 const history = createHistory({
@@ -30,8 +32,13 @@ class App extends Component {
     commandTalk : "",
     avatar: 'https://i2.wp.com/fishgame.com/wp-content/uploads/2018/10/1067081-200-1.png?fit=200%2C200&ssl=1',
     isLoggedIn: false,
-    username: ""
+    username: ""  }
 
+  
+
+  componentDidMount()
+  {
+    this.loginCheck();
   }
   componentDidMount(){
     this.loginCheck();
@@ -42,9 +49,22 @@ class App extends Component {
   loginCheck = () => {
     API
       .loginCheck()
-      .then(res => this.setState({
-        isLoggedIn: res.data.isLoggedIn, username: res.data.username, avatar: res.data.avatar
-      }))
+      .then(res => 
+        {
+          let url = "https://icdn5.digitaltrends.com/image/bitmoji_feature_3-396x398.png";
+          if(res.data.isLoggedIn)
+          {
+            API.findAvatar({userid : res.data.userid})
+            .then(resfromAvatar =>
+              { let arraylength = resfromAvatar.data.length;
+                url = resfromAvatar.data[arraylength - 1].url
+                this.setState({avatar:url})
+              console.log(resfromAvatar.data[0].url)})
+            .catch(err => console.log(err))
+          }  
+          console.log(url);       
+        this.setState({
+        isLoggedIn: res.data.isLoggedIn, username: res.data.username,avatar:url})})
       .catch(err => {
         console.log(err);
         this.setState({isLoggedIn: false})

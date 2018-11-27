@@ -1,18 +1,18 @@
 .img-circle
 {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
 
 .card-home
 {
-  width: 300px;
-  height: 350px;
+  /* width: 300px;
+  height: 350px; */
   background-color: transparent;
   color: white;
   border-style: inset;
   border-width: 3px;
-  border-color: black
+  border-color: black;
 }
 
 body

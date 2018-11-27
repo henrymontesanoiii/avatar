@@ -1,0 +1,10 @@
+.weather-type {
+  background: #353535d7;
+  color: #ffffff;
+  padding-bottom: 2em;
+
+}
+
+.weather-icon {
+  width: 7em;
+}

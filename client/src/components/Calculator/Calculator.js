@@ -50,86 +50,87 @@ class avatarCalculator extends Component {
 
   render() {
     return (
-      <div >
-        <div className ="container ml-5">
-        <div className="row">
-        
-          <div className=" card-header bg-success text-white col-4 mb-1 text-center">
+      <div>
+        <div className ="container">
 
-            <Display data={this.state.operations} />
-          </div>
-        </div>
-        <Buttons>
-          <div className="row">
-            <div className="col-2 text-center btn btn-danger mb-1 ">
-              <Button onClick={this.handleClick} label="C" value="clear" />
-            </div>
-            <div className="col-1 text-center btn btn-dark mb-1 ">
-              <Button onClick={this.handleClick} label="/" value="/" />
-            </div>
-            <div className="col-1 text-center btn btn-dark mb-1 ">
-              <Button onClick={this.handleClick} label="x" value="*" />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-1 text-center btn btn-primary mb-1 ">
-              <Button onClick={this.handleClick} label="7" value="7" />
-            </div>
-            <div className="col-1 text-center btn btn-primary mb-1 ">
-              <Button onClick={this.handleClick} label="8" value="8" />
-            </div>
-            <div className="col-1 text-center btn btn-primary mb-1 ">
-              <Button onClick={this.handleClick} label="9" value="9" />
-            </div>
-            <div className="col-1 text-center btn btn-dark mb-1 ">
-              <Button onClick={this.handleClick} label="-" value="-" />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-1 text-center btn btn-primary mb-1 ">
-              <Button onClick={this.handleClick} label="4" value="4" />
-            </div>
-            <div className="col-1 text-center btn btn-primary mb-1 ">
-              <Button onClick={this.handleClick} label="5" value="5" />
-            </div>
-            <div className="col-1 text-center btn btn-primary mb-1 ">
-              <Button onClick={this.handleClick} label="6" value="6" />
-            </div>
-            <div className="col-1 text-center btn btn-dark mb-1 ">
-              <Button onClick={this.handleClick} label="+" size="2" value="+" />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-3 text-center">
-              <div className="row">
-                <div className="col-4 text-center btn btn-primary mb-1 ">
-                  <Button onClick={this.handleClick} label="1" value="1" />
-                </div>
-                <div className="col-4 text-center btn btn-primary mb-1 ">
-                  <Button onClick={this.handleClick} label="2" value="2" />
-                </div>
-                <div className="col-4 text-center btn btn-primary mb-1 ">
-                  <Button onClick={this.handleClick} label="3" value="3" />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-8 text-center btn btn-primary mb-1 ">
-                  <Button onClick={this.handleClick} label="0" value="0" />
-                </div>
-                <div className="col-4 text-center btn btn-primary align-items-center mb-1 ">
-                  <Button onClick={this.handleClick} label="." value="." />
-                </div>
-              </div>
-            </div>
-            <div className="col-1 text-center btn btn-warning d-flex align-items-center justify-content-center mb-1  ">
-              <Button onClick={this.handleClick} label="="  value="equal" />
-              <Button label="" value="null" />
-            </div>
-          </div>
+            <div className="row justify-content-center mt-5">
           
+              <div className=" card-header bg-success text-white col-4 mb-1 p-4 text-center ">
 
-        </Buttons>
-      </div>
+                <Display data={this.state.operations} />
+              </div>
+            </div>
+            <Buttons>
+              <div className="row justify-content-center">
+                <div className="col-2 text-center btn btn-danger mb-1 ">
+                  <Button onClick={this.handleClick} label="C" value="clear" />
+                </div>
+                <div className="col-1 text-center btn btn-dark mb-1 ">
+                  <Button onClick={this.handleClick} label="/" value="/" />
+                </div>
+                <div className="col-1 text-center btn btn-dark mb-1 ">
+                  <Button onClick={this.handleClick} label="x" value="*" />
+                </div>
+              </div>
+              <div className="row justify-content-center">
+                <div className="col-1 text-center btn btn-primary mb-1 ">
+                  <Button onClick={this.handleClick} label="7" value="7" />
+                </div>
+                <div className="col-1 text-center btn btn-primary mb-1 ">
+                  <Button onClick={this.handleClick} label="8" value="8" />
+                </div>
+                <div className="col-1 text-center btn btn-primary mb-1 ">
+                  <Button onClick={this.handleClick} label="9" value="9" />
+                </div>
+                <div className="col-1 text-center btn btn-dark mb-1 ">
+                  <Button onClick={this.handleClick} label="-" value="-" />
+                </div>
+              </div>
+              <div className="row justify-content-center">
+                <div className="col-1 text-center btn btn-primary mb-1 ">
+                  <Button onClick={this.handleClick} label="4" value="4" />
+                </div>
+                <div className="col-1 text-center btn btn-primary mb-1 ">
+                  <Button onClick={this.handleClick} label="5" value="5" />
+                </div>
+                <div className="col-1 text-center btn btn-primary mb-1 ">
+                  <Button onClick={this.handleClick} label="6" value="6" />
+                </div>
+                <div className="col-1 text-center btn btn-dark mb-1 ">
+                  <Button onClick={this.handleClick} label="+" size="2" value="+" />
+                </div>
+              </div>
+              <div className="row justify-content-center">
+                <div className="col-3 text-center">
+                  <div className="row">
+                    <div className="col-4 text-center btn btn-primary mb-1 ">
+                      <Button onClick={this.handleClick} label="1" value="1" />
+                    </div>
+                    <div className="col-4 text-center btn btn-primary mb-1 ">
+                      <Button onClick={this.handleClick} label="2" value="2" />
+                    </div>
+                    <div className="col-4 text-center btn btn-primary mb-1 ">
+                      <Button onClick={this.handleClick} label="3" value="3" />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-8 text-center btn btn-primary mb-1 ">
+                      <Button onClick={this.handleClick} label="0" value="0" />
+                    </div>
+                    <div className="col-4 text-center btn btn-primary align-items-center mb-1 ">
+                      <Button onClick={this.handleClick} label="." value="." />
+                    </div>
+                  </div>
+                </div>
+                <div className="col-1 text-center btn btn-warning d-flex align-items-center justify-content-center mb-1  ">
+                  <Button onClick={this.handleClick} label="="  value="equal" />
+                  <Button label="" value="null" />
+                </div>
+              </div>
+              
+            </Buttons>
+
+        </div>
       </div>
     )
   }
