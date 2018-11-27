@@ -1,5 +1,5 @@
 module.exports = {
-  User: require('./user'),
+  User: require('./User'),
   Asset: require("./asset"),
-  Avatar: require("./avatar")
+  Avatar: require("./Avatar")
 };
