@@ -1,0 +1,13 @@
+h3 {
+  padding-bottom: 1em;
+}
+
+.clock-div {
+  background: #ffffffbb;
+  color: #353535d7;
+  padding-bottom: 2em;
+}
+
+.react-clock {
+  margin: 0 auto;
+}

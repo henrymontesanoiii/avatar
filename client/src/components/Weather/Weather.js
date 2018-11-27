@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
+import "./Weather.css";
 
 
 // on load, page will call openweather api for a NY, USA weather 
@@ -61,56 +62,56 @@ class Weather extends Component {
   render() {
     return (
       <div className="container-fluid">
-      <div className="row justify-content-center">
-        <div className="col-12 col-sm-8 col-md-6 ml-auto">
-          <h1>Weather:</h1><br></br>
-          <h4> City: {this.state.city}</h4>
-          <h4>Country: {this.state.country}</h4>
-          <br></br>
-
-          <div className="col-12 col-sm-6 col-md-4 text-center">
-            <input
-              className="form-control text-center"
-              value={this.state.city}
-              onChange={this.handleInputChange}
-              name="city"
-              placeholder="Search for city"
-              type="text"
-
-            />
+        <div className="row">
+          <div className="col-12 col-sm-8 col-md-6 text-center weather-type">
+            <h1 className="mb-5 pb-5">Weather:</h1>
+            <h4 className="mt-5"> City: {this.state.city}</h4>
+            <h4>Country: {this.state.country}</h4>
             <br></br>
 
-          </div>
-          <div className="col-12 col-sm-6 col-md-4 text-center">
-            <input
-              className="form-control text-center"
-              value={this.state.country}
-              onChange={this.handleInputChange}
-              name="country"
-              placeholder="Search for country"
-              type="text"
+            <div className="col-12 col-sm-6 text-center">
+              <input
+                className="form-control text-center"
+                value={this.state.city}
+                onChange={this.handleInputChange}
+                name="city"
+                placeholder="Search for city"
+                type="text"
 
-            />
-            <br></br>
+              />
+              <br></br>
+
+            </div>
+            <div className="col-12 col-sm-6 text-center">
+              <input
+                className="form-control text-center"
+                value={this.state.country}
+                onChange={this.handleInputChange}
+                name="country"
+                placeholder="Search for country"
+                type="text"
+
+              />
+              <br></br>
+
+            </div>
+            <button className="btn btn-primary ml-3" onClick={this.handleSearch}>Get weather</button>
 
           </div>
-          <button className="btn  ml-3 btn-outline-primary" onClick={this.handleSearch}>Get weather</button>
+        
+          <div className="col-12 col-sm-8 col-md-6 weather-type text-center">
+            <img className="img-fluid" src={"http://openweathermap.org/img/w/" + (this.state.icon) + ".png"} alt="icon" />
+            {/* <h3>Icon: {this.state.icon}</h3> */}
+            <h4>temp min: {this.state.temp_min} </h4>
+            <h4>temp max: {this.state.temp_max}</h4>
+            <h4>humidity: {this.state.humidity}</h4>
+            <h4>description: {this.state.description}</h4>
+
+          </div>
+
+
 
         </div>
-       
-        <div className="col-12 col-sm-8 col-md-6 ml-auto">
-          <img className="img-fluid" src={"http://openweathermap.org/img/w/" + (this.state.icon) + ".png"} alt="icon" />
-          {/* <h3>Icon: {this.state.icon}</h3> */}
-          <h4>temp min: {this.state.temp_min} </h4>
-          <h4>temp max: {this.state.temp_max}</h4>
-          <h4>humidity: {this.state.humidity}</h4>
-          <h4>description: {this.state.description}</h4>
-
-        </div>
-
-
-
-      </div>
       </div>
 
     )

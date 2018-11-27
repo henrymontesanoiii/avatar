@@ -59,12 +59,12 @@ class Shopping extends Component {
 
   render() {
     return (
-      <div>
-      <div className="row" style={styles.header}>
+      <div className="container-fluid" style={styles.header}>
+      <div className="row">
         <div className="col-12 col-sm-4">
-          <form className="form-inline my-2">
+          <form className="form-inline my-3 p-0">
             <input 
-              className="form-control mx-sm-2" 
+              className="form-control" 
               type="search" 
               placeholder="Search for a product" 
               aria-label="Search" 
@@ -75,8 +75,8 @@ class Shopping extends Component {
             <button className="btn btn-primary" type="submit" onClick={this.getSearchResults}>Search</button>
           </form>
         </div>
-        <div className="col-12 col-sm-8 text-center mb-3">
-          <h1>Search for Products on Walmart</h1>
+        <div className="col-12 col-sm-6 mb-3">
+          <h1>Search Walmart Products</h1>
         </div> 
       </div>
 
@@ -89,8 +89,9 @@ class Shopping extends Component {
             (this.state.results.map((item) => {
               return (
                 <div key={item.itemId} className="col-12 col-sm-4 col-md-3 text-center card">
-                  <h5 className="card-header">{item.name}</h5>
                   <div className="card-body">
+                  <h4 className="card-title">{item.name}</h4> <hr></hr>
+                  
                     <img src={item.largeImage} alt={item.name} className="img-fluid"/>
                     <h5>${item.salePrice || item.msrp}</h5>
                     <a className="btn btn-outline-primary" href={item.productUrl} target="_blank">Visit Product Page</a>
