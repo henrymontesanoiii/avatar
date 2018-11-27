@@ -58,6 +58,11 @@ export default {
   //This route is to create an avatar
   createAvatar: function (avatarInfo) {
     return axios.post("api/avatar/create", avatarInfo)
+  },
+
+  findAvatar: function (findUser) {
+    console.log(findUser);
+    return axios.get("api/avatar/find/" + findUser.userid)
   }
 }
   

@@ -13,7 +13,7 @@ class Jokes extends Component {
   }
 
   componentDidMount() {
-   // this.generateJoke();
+    this.generateJoke();
   }
 
   generateJoke = () => {

@@ -27,9 +27,6 @@ class Nav extends Component {
         this.setState({
           isLoggedIn: res.data.isLoggedIn, username: res.data.username
         })
-
-
-
       }
       )
       .catch(err => {
@@ -72,7 +69,7 @@ class Nav extends Component {
     return (
 
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <Link className="navbar-brand" to="/"><img src="../images/babymakr.jpg"></img></Link>
+        <Link className="navbar-brand fas fa-user-astronaut" to="/">   Widget World</Link>
 
         <div className="collapse navbar-collapse ">
           <div className="navbar-nav ">
@@ -116,10 +113,16 @@ class Nav extends Component {
             </div>
 
 </li>
-        <Speech callBackFromParent = {this.GetDataFromSpeech}></Speech> 
+
           </div>
         </div>
+    <ul className="nav justify-content-end">
+      <i class="fas fa-microphone-alt fa-3x mr-3"></i>
+      <li className="nav-item">
 
+        <Speech callBackFromParent = {this.GetDataFromSpeech}></Speech> 
+      </li>
+    </ul>
       </nav>
     )
 

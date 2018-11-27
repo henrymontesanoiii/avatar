@@ -13,7 +13,7 @@ class Login extends Component {
   state = {
     isLoggedIn: false,
     username: "",
-    password: ""
+    password: ""    
   }
 
   handleInputChange = e => {
@@ -31,17 +31,14 @@ class Login extends Component {
       .login({username: this.state.username, password: this.state.password})
       .then(res => {
         console.log(res.data);
-        this.setState({isLoggedIn: res.data})
-        console.log(location);
-        history.push(location);
-        //window.location.reload();
-
+        this.setState({isLoggedIn: res.data})           
+        history.push(location); 
       })
       .catch(err => alert("Incorrect Username or Password!"));
   }
 
   render() {
-    // If user is logged in, take them to main page
+    // If user is logged in, take them to main page   
     if (this.state.isLoggedIn) {
       return <Redirect to="/"/>
     }

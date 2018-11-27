@@ -61,15 +61,15 @@ class Weather extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <div className="col-12 col-sm-8 col-md-6 text-center weather-type">
-            <h1 className="mb-5 pb-5">Weather:</h1>
+            <h1 className="my-5 py-5">Weather:</h1>
             <h4 className="mt-5"> City: {this.state.city}</h4>
             <h4>Country: {this.state.country}</h4>
             <br></br>
 
-            <div className="col-12 col-sm-6 text-center">
+            <div className="col-12 text-center">
               <input
                 className="form-control text-center"
                 value={this.state.city}
@@ -82,7 +82,7 @@ class Weather extends Component {
               <br></br>
 
             </div>
-            <div className="col-12 col-sm-6 text-center">
+            <div className="col-12 text-center">
               <input
                 className="form-control text-center"
                 value={this.state.country}
@@ -100,7 +100,7 @@ class Weather extends Component {
           </div>
         
           <div className="col-12 col-sm-8 col-md-6 weather-type text-center">
-            <img className="img-fluid" src={"http://openweathermap.org/img/w/" + (this.state.icon) + ".png"} alt="icon" />
+            <img className="img-fluid mt-5 weather-icon" src={"http://openweathermap.org/img/w/" + (this.state.icon) + ".png"} alt="icon" />
             {/* <h3>Icon: {this.state.icon}</h3> */}
             <h4>temp min: {this.state.temp_min} </h4>
             <h4>temp max: {this.state.temp_max}</h4>
