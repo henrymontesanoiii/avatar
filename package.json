@@ -56,5 +56,9 @@
     "react-voice-components": "^1.0.0",
     "reactstrap": "^6.5.0",
     "styled-components": "^4.1.1"
+  },
+  "engines": {
+    "node": "8.12.0"
   }
 }
+
