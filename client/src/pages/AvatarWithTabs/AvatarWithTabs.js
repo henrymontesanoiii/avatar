@@ -7,6 +7,9 @@ import '../../App.css';
 import Libmoji from "libmoji";
 import assets from '../../JSON/assets.json'
 import Canvas from '../../components/Canvas'
+import VoiceList from '../../components/VoiceList'
+import API from "../../utils/API";
+import {Redirect} from "react-router-dom";
 
 class AvatarWithTabs extends Component {
 
@@ -14,6 +17,8 @@ class AvatarWithTabs extends Component {
     super(props);
 
     this.state = {
+      isLoggedIn: true,
+    username: "",
       selectedGender: "male",
       selectedStyle: "bitstrips",
       selectedOutfit: "",
@@ -23,7 +28,7 @@ class AvatarWithTabs extends Component {
       selectedSkinTone: "",
       selectedHairTone: "",
       selectedGlasses: "",
-      selectedAvatar:"",
+      selectedAvatar: "",
       activeProperty: null,
       outfits: [],
       hats: [],
@@ -41,6 +46,24 @@ class AvatarWithTabs extends Component {
     };
   }
 
+  // Check login status on load
+  componentDidMount() {
+    this.loginCheck();
+  }
+
+  // Check login status
+  loginCheck = () => {
+    API
+      .loginCheck()
+      .then(res => this.setState({
+        isLoggedIn: res.data.isLoggedIn, username: res.data.username
+      }))
+      .catch(err => {
+        console.log(err);
+        this.setState({isLoggedIn: false})
+      })
+  }
+
   funcSetGender = (id) => {
 
     this.setState({ selectedGender: id }, () => console.log(this.state.selectedGender));
@@ -48,32 +71,32 @@ class AvatarWithTabs extends Component {
     this.setState({ brands: [] });
     this.setState({ hair: [] });
   }
-  funcSetStyle = (id,url) => {
-   
+  funcSetStyle = (id, url) => {
+
     this.setState({ selectedStyle: id }, () => console.log(this.state.selectedStyle));
   }
 
-  funcSetOutfit = (id,url) => {
+  funcSetOutfit = (id, url) => {
     this.setState({ selectedOutfit: id }, () => console.log(this.state.selectedOutfit));
     this.setState({ selectedAvatar: url }, () => console.log(this.state.selectedAvatar));
   }
 
-  funcSetHair = (id,url) => {    
+  funcSetHair = (id, url) => {
     this.setState({ selectedHair: id }, () => console.log(this.state.selectedHair));
     this.setState({ selectedAvatar: url }, () => console.log(this.state.selectedAvatar));
   }
 
-  funcSetHairTone = (id,url) => {
+  funcSetHairTone = (id, url) => {
     this.setState({ selectedHairTone: id }, () => console.log(this.state.selectedHairTone));
     this.setState({ selectedAvatar: url }, () => console.log(this.state.selectedAvatar));
   }
 
-  funcSetGlasses = (id,url) => {
+  funcSetGlasses = (id, url) => {
     this.setState({ selectedGlasses: id }, () => console.log(this.state.selectedGlasses));
     this.setState({ selectedAvatar: url }, () => console.log(this.state.selectedAvatar));
   }
 
-  funcSetHats = (id,url) => {
+  funcSetHats = (id, url) => {
     this.setState({ selectedHat: id }, () => console.log(this.state.selectedHat));
     this.setState({ selectedAvatar: url }, () => console.log(this.state.selectedAvatar));
   }
@@ -140,7 +163,6 @@ class AvatarWithTabs extends Component {
     let arrFit = [];
     let arroutfit = assets["outfits"][gender]["brands"];
     arroutfit.forEach(element => {
-      console.log(element.name);
       arrFit.push({ id: element.id, name: element.name });
     });
     this.setState({ outfitTypes: Array.from(arrFit) });
@@ -200,6 +222,10 @@ class AvatarWithTabs extends Component {
 
 
   render() {
+    if (!this.state.isLoggedIn) {
+      return <Redirect to="/login"/>
+    }
+    else {
     return (
       <div className="App">
         <Jumbotron>
@@ -207,7 +233,7 @@ class AvatarWithTabs extends Component {
         </Jumbotron>
 
         <div className="main">
-          <Col md={8}>
+          <Col md={9}>
             <Tabs activeKey={this.state.key} onSelect={this.handleSelect} id="controlled-tab-example" >
               <Tab eventKey={1} title="Gender" >
                 <TemplateList
@@ -269,16 +295,17 @@ class AvatarWithTabs extends Component {
               </Tab>
             </Tabs>
           </Col>
-          <Col md={4}>
+          <Col md={3}>
+            <VoiceList></VoiceList>
             <Canvas
-              url = {this.state.selectedAvatar}
+              url={this.state.selectedAvatar}
             />
 
           </Col>
         </div>
       </div>
 
-    );
+    )};
   }
 }
 

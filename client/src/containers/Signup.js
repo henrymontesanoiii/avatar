@@ -26,7 +26,8 @@ class Login extends Component {
         this.setState({ success: res.data })
 
       })
-      .catch(err => alert("Username already exists, please create another Username!"));
+      // .catch(err => alert("Username already exists, please create another Username!"));
+      .catch(err => console.log(err));
   }
 
   render() {

@@ -18,7 +18,7 @@ router
     if (req.user) {
       // If logged in, send back this flag and the username itself
       // NOTE: you can send back whatever you want here
-      res.json({isLoggedIn: true, username: req.user.username});
+      res.json({isLoggedIn: true, username: req.user.username, userid: req.user._id, avatar: 'https://icdn5.digitaltrends.com/image/bitmoji_feature_3-396x398.png'});
     } else {
       // If user isn't logged in, send back false
       res.json(false);

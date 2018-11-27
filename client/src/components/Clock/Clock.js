@@ -15,10 +15,11 @@ class avatarClock extends Component {
  
   render() {
     return (
-      <div className = "">
+      <div className = "container ml-5">
         <p>Current time:</p>
         <Clock
           value={this.state.date}
+          size = {250}
         />
       </div>
     );

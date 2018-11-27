@@ -51,7 +51,7 @@ class avatarCalculator extends Component {
   render() {
     return (
       <div >
-        <div className ="container">
+        <div className ="container ml-5">
         <div className="row">
         
           <div className=" card-header bg-success text-white col-4 mb-1 text-center">
