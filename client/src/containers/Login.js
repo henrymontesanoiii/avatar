@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {Redirect} from "react-router-dom";
 import API from "../utils/API";
 import createHistory from "history/createBrowserHistory";
+import "./background.css";
 
 const history = createHistory({
   forceRefresh: true
@@ -47,7 +48,7 @@ class Login extends Component {
 
     return (
       <div className="container my-5">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center dark-style">
           <form>
             <h3>Login!</h3>
             <div className="form-group">

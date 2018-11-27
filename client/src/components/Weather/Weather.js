@@ -61,7 +61,7 @@ class Weather extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-12 col-sm-8 col-md-6 text-center weather-type">
             <h1 className="mb-5 pb-5">Weather:</h1>
