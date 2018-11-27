@@ -27,9 +27,6 @@ class Nav extends Component {
         this.setState({
           isLoggedIn: res.data.isLoggedIn, username: res.data.username
         })
-
-
-
       }
       )
       .catch(err => {

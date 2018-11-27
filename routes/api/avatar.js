@@ -6,5 +6,9 @@ router
   .route('/create')
   .post(avatarController.createAvatar)  
 
-module.exports = router;
+  router
+  .route('/find/:id')
+  .get(avatarController.find)
+  module.exports = router;
+
 

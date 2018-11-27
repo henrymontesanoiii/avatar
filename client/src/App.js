@@ -9,7 +9,7 @@ import wallpaper from "../src/wallpaper.json";
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import AvatarCreate from "./pages/AvatarWithTabs/AvatarWithTabs";
-import Jokes from "./components/Jokes";
+import Jokes from "./components/Jokes/Jokes";
 import Shopping from "./components/Shopping";
 import Talk from "./pages/Talk/Talk";
 import Home from "./pages/Home/Home";
@@ -61,15 +61,19 @@ class App extends Component {
       history.push('/jeopardy');
       cmdToTalk = "Play your Trivia";
     }
-    else if(command.includes('jokes'))
+    else if(command.includes('joke'))
     {
       history.push('/jokes');
-      cmdToTalk = "Here you go.... Laugh at your jokes";
+      cmdToTalk = "Here you go.";
     }
     else if(command.includes('shopping'))
     {
       history.push('/shopping');
       cmdToTalk = "Lets do some shopping";
+    }
+    else 
+    {
+      cmdToTalk= "";
     }
     this.setState({commandTalk:cmdToTalk});
 }

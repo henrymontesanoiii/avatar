@@ -34,6 +34,11 @@ class Login extends Component {
         console.log(location);
         history.push(location);
         //window.location.reload();
+        //Get the Avatar
+        console.log("USER ID = " + res.data._id);
+        API.findAvatar({userid : res.data._id})
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err))
 
       })
       .catch(err => alert("Incorrect Username or Password!"));
