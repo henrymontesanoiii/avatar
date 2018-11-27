@@ -90,6 +90,8 @@ render() {
 
   document.body.style.backgroundImage = `url(${this.state.wallpaperImage})`;
   document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundAttachment = "fixed";
+
   return (
     <Router>
       <div  >
