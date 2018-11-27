@@ -1,4 +1,6 @@
 import axios from "axios";
+const keys = require('../keys');
+require('dotenv').config();
 
 const APIKEY = "r2qcxgswnxb39z6qg3nmkru5";
 const SearchURL = "https://api.walmartlabs.com/v1/search?apiKey=";

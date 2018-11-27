@@ -16,6 +16,8 @@ import Talk from "./pages/Talk/Talk";
 import Home from "./pages/Home/Home";
 import createHistory from "history/createBrowserHistory";
 import API from "./utils/API";
+require('dotenv').config();
+
 
 
 const history = createHistory({
@@ -38,6 +40,10 @@ class App extends Component {
   {
     this.loginCheck();
   }
+  componentDidMount(){
+    this.loginCheck();
+  }
+  
 
   // Check login status
   loginCheck = () => {

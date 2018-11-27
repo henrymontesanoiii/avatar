@@ -1,9 +1,11 @@
 import axios from "axios";
+require('dotenv').config();
+const keys = require('../keys');
 
 
 const BASEURL = "https://api.openweathermap.org/data/2.5/weather?q=";
 const APIENDPOINT = "&units=imperial&appid=";
-const APIKEY = "342d2d7e5af08b2e8114b52d9ac29603";
+const APIKEY = '342d2d7e5af08b2e8114b52d9ac29603';
 
 const JeopardyBase = "https://opentdb.com/api.php?amount=1&category=";
 const jeopardyEndPoint = "&type=multiple";
@@ -13,6 +15,8 @@ const jeopardyEndPoint = "&type=multiple";
 export default {
   getWeather: function (city, country) {
     console.log(city, country)
+    console.log("API KEYS");
+    console.log(APIKEY);
     let place = city.trim();
     console.log(BASEURL + place + "," + country + APIENDPOINT + APIKEY)
     return axios.get(BASEURL + place + "," + country + APIENDPOINT + APIKEY)

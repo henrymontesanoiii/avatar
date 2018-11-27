@@ -7,6 +7,7 @@ import '../../App.css';
 import Libmoji from "libmoji";
 import assets from '../../JSON/assets.json'
 import Canvas from '../../components/Canvas'
+import VoiceList from '../../components/VoiceList'
 import API from "../../utils/API";
 import {Redirect} from "react-router-dom";
 

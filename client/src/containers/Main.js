@@ -29,9 +29,7 @@ class Main extends Component {
   render() {
     
     // If user isn't logged in, don't let them see this page
-    if (!this.state.isLoggedIn) {
-      return <Redirect to="/login"/>
-    }
+    
 
     return (
       <h1>You Made it to the main page {this.state.isLoggedIn.username}!</h1>
