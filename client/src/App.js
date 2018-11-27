@@ -4,16 +4,19 @@ import avatarClock from "./components/Clock/";
 import avatarCalculator from "./components/Calculator";
 import Nav from "./components/Nav";
 import Jeopardy from "./components/Jeopardy/Jeopardy";
-import Weather from "./components/Weather/Weather";
+import Weather from "./components/Weather";
 import wallpaper from "../src/wallpaper.json";
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
+import Main from "./containers/Main";
 import AvatarCreate from "./pages/AvatarWithTabs/AvatarWithTabs";
-import Jokes from "./components/Jokes/Jokes";
+import Jokes from "./components/Jokes";
 import Shopping from "./components/Shopping";
 import Talk from "./pages/Talk/Talk";
 import Home from "./pages/Home/Home";
 import createHistory from "history/createBrowserHistory";
+import API from "./utils/API";
+
 
 const history = createHistory({
   forceRefresh: true
@@ -24,10 +27,43 @@ class App extends Component {
   state = {
     wallpaperImage: wallpaper[0].image,
     wallpapers: wallpaper,
-    commandTalk : ""
+    commandTalk : "",
+    avatar: 'https://i2.wp.com/fishgame.com/wp-content/uploads/2018/10/1067081-200-1.png?fit=200%2C200&ssl=1',
+    isLoggedIn: false,
+    username: ""  }
 
+  
+
+  componentDidMount()
+  {
+    this.loginCheck();
   }
 
+  // Check login status
+  loginCheck = () => {
+    API
+      .loginCheck()
+      .then(res => 
+        {
+          let url = "https://icdn5.digitaltrends.com/image/bitmoji_feature_3-396x398.png";
+          if(res.data.isLoggedIn)
+          {
+            API.findAvatar({userid : res.data.userid})
+            .then(resfromAvatar =>
+              { let arraylength = resfromAvatar.data.length;
+                url = resfromAvatar.data[arraylength - 1].url
+                this.setState({avatar:url})
+              console.log(resfromAvatar.data[0].url)})
+            .catch(err => console.log(err))
+          }  
+          console.log(url);       
+        this.setState({
+        isLoggedIn: res.data.isLoggedIn, username: res.data.username,avatar:url})})
+      .catch(err => {
+        console.log(err);
+        this.setState({isLoggedIn: false})
+      })
+  }
 
   commandFromSpeech = (command) => {
        
@@ -61,19 +97,15 @@ class App extends Component {
       history.push('/jeopardy');
       cmdToTalk = "Play your Trivia";
     }
-    else if(command.includes('joke'))
+    else if(command.includes('jokes'))
     {
       history.push('/jokes');
-      cmdToTalk = "Here you go.";
+      cmdToTalk = "Here you go.... Laugh at your jokes";
     }
     else if(command.includes('shopping'))
     {
       history.push('/shopping');
       cmdToTalk = "Lets do some shopping";
-    }
-    else 
-    {
-      cmdToTalk= "";
     }
     this.setState({commandTalk:cmdToTalk});
 }
@@ -94,14 +126,13 @@ render() {
 
   document.body.style.backgroundImage = `url(${this.state.wallpaperImage})`;
   document.body.style.backgroundSize = "cover";
-  document.body.style.backgroundAttachment = "fixed";
-
   return (
     <Router>
-      <div  >
+      <div >
         <Nav command={this.commandFromSpeech} handleClicked={this.handleClicked} />
         <Talk commandtoTalk ={this.state.commandTalk} ></Talk>
-        <div>
+        <div className = "row">
+        <div className = "col-9">
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/clock" component={avatarClock} />
@@ -115,7 +146,12 @@ render() {
             <Route exact path="/signup" component={Signup}/> 
             <Route exact path="/login" component={Login}/>          
           </Switch>
+          </div>
+          <div className = "col-3 text-right">
+          <img src = {this.state.avatar}></img>
+          </div>
         </div>
+        
       </div>
     </Router>
   )

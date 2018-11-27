@@ -17,11 +17,13 @@ class avatarClock extends Component {
   render() {
     return (
       <div className = "row justify-content-center">
-        <div className="col-12 col-sm-2 text-center clock-div">
+        <div className="col-12 col-sm-5 text-center clock-div">
 
             <h3>Current time:</h3>
             <Clock
               value={this.state.date}
+              size={350}
+              renderNumbers={true}
             />
 
         </div>

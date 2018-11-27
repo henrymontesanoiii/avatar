@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
+import {Redirect} from "react-router-dom";
 import {Card, CardBody, CardTitle, CardSubtitle,CardText, CardImg} from 'reactstrap';
 import API from "../utils/API";
 import VoiceList from '../components/VoiceList'
@@ -9,7 +10,8 @@ class Canvas extends React.Component{
   constructor(props) {
     super(props);
     this.state = {      
-      selectedVoice : ""
+      selectedVoice : "",
+      needsRedirect : false
     };
   }
 
@@ -21,6 +23,8 @@ class Canvas extends React.Component{
 
   saveToCanvas = (e) =>
   {
+    this.setState({needsRedirect : true});
+    e.preventDefault();
     let userid = "";
     API
     .loginCheck()
@@ -34,18 +38,22 @@ class Canvas extends React.Component{
     })
     .then(res => {
       console.log(res.data);
+ 
     })
     .catch(err => {
       console.log(err);
       this.setState({ isLoggedIn: false })
 
-    })
-
-    e.preventDefault();
+    })    
+ 
    
 
   }
-	render(){		
+	render(){	
+    if(this.state.needsRedirect)
+    {
+      return <Redirect to="/"/>
+    }	
 		return (
       <div>
       <Card width={"200px"} >

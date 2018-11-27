@@ -53,7 +53,7 @@ class avatarCalculator extends Component {
       <div>
         <div className ="container">
 
-            <div className="row justify-content-center">
+            <div className="row justify-content-center mt-5">
           
               <div className=" card-header bg-success text-white col-4 mb-1 p-4 text-center ">
 
