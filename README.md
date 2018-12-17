@@ -1,5 +1,6 @@
 # Widget World (Rutgers Bootcamp Group Final Project)
-----
+![Widget World](https://henrymontesanoiii.github.io/static/media/Widget.cf202eed.png)
+
 Live Site: [Widget World](https://damp-reef-74030.herokuapp.com/)
 ----
 ## What is Widget World?
