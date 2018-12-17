@@ -16,6 +16,7 @@ Live Site: [Widget World](https://damp-reef-74030.herokuapp.com/)
 ![Express](http://artisamor.com/img/skills/expressjs.png)
 ![Mongodb](https://yt3.ggpht.com/a-/AN66SAzQVIx5-M69IPvadSAGWrFUi9xbOUmRsWbZiQ=s100-mo-c-c0xffffffff-rj-k-no)
 ![Passport](https://qph.fs.quoracdn.net/main-thumb-t-2042530-100-wrxoxdrvvnppvmrrrgawjnkbpplksqqh.jpeg)
+![Bootstrap](https://s.gravatar.com/avatar/4570e88621a9310ccde6477f33629c28?size=100&default=retro)
 
 ----
 ## API's
